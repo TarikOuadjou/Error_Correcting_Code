@@ -7,7 +7,7 @@ n=15
 k=7
 e=2
 g=465
-nom_image = r'mario.jpg'
+nom_image = r'descartes.jpg'
 path = r'images/' + nom_image
 img = Image.open(path)
 pixels = img.load()
@@ -16,7 +16,8 @@ pixel_sans_code = image_blank.load()
 
 def decalage(p, d):
     d=d%n
-    return (p << d)|(p >> (n - d))
+    nombre = (p << d)|(p >> (n - d))
+    return nombre % (1<<n)
 
 def multiplication(p,q):
     s = 0
@@ -70,40 +71,38 @@ def decodage_naif(w,g):
         return a
     return 0
 
+T=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+for i in range(14):
+    nombre = 2**14 + 2**i
+    T[i]=reste(nombre,g)
+T[14] = reste(2**14,g)
+
 def decodage(w,g):
     (a,s) = division_euclid(w,g)
-    if(poids(s)==0):
+    if(s==0):
         return a
     for i in range(n):
-        if(poids(s)<=e):
-            erreur = decalage(s,n-i)
+        if(s in T):
+            k = T.index(s)
+            erreur = 2**14+2**k
+            if (k == 14):
+                erreur = 2**14
+            erreur = decalage(erreur,n-i)
             m = w^erreur
             return quotient(m,g)
         else:
             s=calcul(g,s)
     return a
 
-def set_bit(v, index, x):
-  
-  mask = 1 << index   # Compute mask, an integer with just bit 'index' set.
-  v &= ~mask          # Clear the bit indicated by the mask (if x is False)
-  if x:
-    v |= mask         # If x was True, set the bit indicated by the mask.
-  return v  
-
 def ajout_erreur(w):
     p=w
     for k in range(n):
-        if(random.randint(0,20)==0):
-            p=set_bit(p,k,True)
-        if(random.randint(0,20)==1):
-            p=set_bit(p,k,False)
+        if(random.randint(0,15)==0):
+            p = p ^ (1<<k)
     return p
-nombre = 0
+
 for i in range(img.size[0]):    
     for j in range(img.size[1]):
-            nombre=nombre+1
-            print(nombre) 
             (p1,p2,p3)=pixels[i,j]
             p1=p1>>1
             p2=p2>>1
