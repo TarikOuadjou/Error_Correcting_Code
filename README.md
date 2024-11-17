@@ -42,6 +42,6 @@ pip install pillow
    - **`Code_correcteur_bit.py`** : Utilise une représentation des polynômes via des entiers (bits), plus rapide.  
    - **`Code_correcteur_liste.py`** : Utilise une représentation des polynômes sous forme de listes, plus lente.  
 4. Les résultats seront sauvegardés dans le dossier `image_resultat` :  
-   - L'image encodée sera enregistrée avec le suffixe `_code` dans son nom.  
-   - L'image décodée et corrigée sera enregistrée avec le suffixe `_sans_code`.
+   - L'image obtenue par décodage par l'algorithme sera enregistrée avec le suffixe `_code` dans son nom.  
+   - L'image obtenue sans le décodage par l'algorithme sera enregistrée avec le suffixe `_sans_code`.
 
