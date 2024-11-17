@@ -32,3 +32,16 @@ Installez Pillow avec la commande suivante :
 
 ```bash
 pip install pillow
+```
+
+## Utilisation
+
+1. Placez l'image que vous souhaitez encoder dans le dossier `images`.  
+2. Modifiez la variable `nom_image` dans le fichier `Code_correcteur_bit.py` ou `Code_correcteur_liste.py` pour qu'elle corresponde au nom de votre image  
+3. Exécutez l'un des fichiers :  
+   - **`Code_correcteur_bit.py`** : Utilise une représentation des polynômes via des entiers (bits), plus rapide.  
+   - **`Code_correcteur_liste.py`** : Utilise une représentation des polynômes sous forme de listes, plus lente.  
+4. Les résultats seront sauvegardés dans le dossier `image_resultat` :  
+   - L'image encodée sera enregistrée avec le suffixe `_code` dans son nom.  
+   - L'image décodée et corrigée sera enregistrée avec le suffixe `_sans_code`.
+
