@@ -1,11 +1,13 @@
 from PIL import Image
 import random
+import os
 random.seed()
 n=23
 k=12
 e=2
 g=[1,0,1,0,1,1,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0]
-path = 'images\mario.jpg'
+nom_image = r'mario.jpg'
+path = r'images/' + nom_image
 img = Image.open(path)
 image_blank=Image.new('RGB',(img.size[0],img.size[1]))
 pixels = img.load()
@@ -144,9 +146,9 @@ for i in range(img.size[0]):    # for every col:
             b3=decodage(b3,g)
             pixels[i,j]=(binaire_decimale(b1),binaire_decimale(b2),binaire_decimale(b3))
 
-img.show()
-img.save(r'test\galaxy_code.png')
-image_blank.save(r'test\galaxy_sans_code.png')
+base_name, ext = os.path.splitext(nom_image)
+img.save(r'image_resultat/' + base_name + '_code' + ext)
+image_blank.save(r'image_resultat/' + base_name + '_sans_code' + ext)
 
 
 
