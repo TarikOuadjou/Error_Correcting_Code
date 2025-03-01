@@ -29,16 +29,9 @@ Après avoir exécuté l'un des fichiers (`Code_correcteur_bit.py` ou `Code_corr
 
 Voici un aperçu des résultats après décodage avec et sans correction d'erreurs :
 
-<div style="display: flex; justify-content: space-between;">
-  <div style="text-align: center; margin-right: 10px;">
-    <img src="image_resultat/descartes_code.jpg" alt="Image avec correction d'erreurs" width="400"/>
-    <p>Image avec correction d'erreurs</p>
-  </div>
-  <div style="text-align: center;">
-    <img src="image_resultat/descartes_sans_code.jpg" alt="Image sans correction d'erreurs" width="400"/>
-    <p>Image sans correction d'erreurs</p>
-  </div>
-</div>
+| Image avec correction d'erreurs | Image sans correction d'erreurs |
+|:-------------------------------:|:-------------------------------:|
+| ![Image avec correction d'erreurs](image_resultat/descartes_code.jpg) | ![Image sans correction d'erreurs](image_resultat/descartes_sans_code.jpg) |
 
 ## Prérequis
 
