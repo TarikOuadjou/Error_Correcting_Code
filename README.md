@@ -30,10 +30,10 @@ Après avoir exécuté l'un des fichiers (`Code_correcteur_bit.py` ou `Code_corr
 Les résultats sont sauvegardés dans les dossiers `image_resultat/descarte_code` et `image_resultat/descarte_sans_code`. Voici un aperçu des résultats :
 
 ### Image avec correction d'erreurs
-![Image avec correction d'erreurs](image_resultat/descarte_code/resultat_code.png)
+![Image avec correction d'erreurs](image_resultat/descarte_code.jpg)
 
 ### Image sans correction d'erreurs
-![Image sans correction d'erreurs](image_resultat/descarte_sans_code/resultat_sans_code.png)
+![Image sans correction d'erreurs](image_resultat/descarte_sans_code.jpg)
 
 ## Prérequis
 
