@@ -20,6 +20,21 @@ Deux approches sont proposées :
 - **Ajout d'erreurs** : Des altérations sont appliquées de manière aléatoire aux pixels encodés pour reproduire des erreurs de transmission.
 - **Décodage** : L'algorithme correcteur tente de détecter et de corriger ces erreurs pour retrouver les valeurs d'origine.
 
+## Résultats
+
+Après avoir exécuté l'un des fichiers (`Code_correcteur_bit.py` ou `Code_correcteur_liste.py`), deux versions de l'image décodée seront générées :
+
+- **Avec correction d'erreurs** : L'image obtenue après avoir appliqué l'algorithme correcteur d'erreurs.
+- **Sans correction d'erreurs** : L'image obtenue sans correction, montrant les erreurs présentes après transmission.
+
+Les résultats sont sauvegardés dans les dossiers `image_resultat/descarte_code` et `image_resultat/descarte_sans_code`. Voici un aperçu des résultats :
+
+### Image avec correction d'erreurs
+![Image avec correction d'erreurs](image_resultat/descarte_code/resultat_code.png)
+
+### Image sans correction d'erreurs
+![Image sans correction d'erreurs](image_resultat/descarte_sans_code/resultat_sans_code.png)
+
 ## Prérequis
 
 Avant d'exécuter ce projet, assurez-vous d'avoir les bibliothèques suivantes installées :  
